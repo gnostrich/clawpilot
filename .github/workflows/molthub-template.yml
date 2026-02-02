@@ -1,3 +1,65 @@
+# ============================================================================
+# Molthub Integration Template
+# ============================================================================
+# This workflow template enables integration with Moltbook for your repository.
+# Simply copy this file to your repository's .github/workflows/ directory and
+# configure it according to your needs.
+#
+# ----------------------------------------------------------------------------
+# MOLTBOOK COLLABORATION POLICY
+# ----------------------------------------------------------------------------
+# This section provides guidelines for customizing repository-specific
+# collaboration rules with Moltbook. Define your own policies for posting
+# updates, processing feedback, and interacting with Moltbook.
+#
+# PURPOSE:
+# - Define project-specific rules for GitHub-Moltbook interactions
+# - Ensure consistent and clean collaboration workflow
+# - Allow configurable workflows for posting, feedback handling, and updates
+#
+# 1. POSTING RULES
+# ----------------
+# Define conditions under which posts are sent to Moltbook:
+#
+# - Submolt: Specify the Moltbook thread for this repository
+#   Example: "community-feedback" or "project-updates"
+#
+# - Triggers: Define when Moltbook posts are triggered
+#   • Push events on 'main' or 'release' branch
+#   • Manual execution of workflows (workflow_dispatch)
+#
+# - Posting Format:
+#   • Title: "[Bot-Generated] Commit Update: <Headline>"
+#   • Content: Use commit summaries and additional structured data from
+#     repository files (e.g., CHANGELOG.md, RELEASE_NOTES.md)
+#
+# 2. FEEDBACK RULES
+# -----------------
+# Define how feedback from Moltbook is processed:
+#
+# - Fetch Feedback:
+#   • Specify how often feedback is fetched (e.g., hourly, daily)
+#   • Use Moltbook thread: "critical-responses", "community-feedback"
+#
+# - Actions on Feedback:
+#   • Create GitHub Issues for critical responses or feature requests
+#   • Store general feedback in branch: 'moltbook-feedback'
+#
+# 3. UPDATE POLICY
+# ----------------
+# Define how Moltbook-related updates are tracked/stored:
+#
+# - Feedback storage: /moltbook/ folder
+# - Branch: 'moltbook-updates' (isolated branch for clean integration)
+#
+# EXAMPLE USE CASES:
+# 1. Automatically post changelog updates to Moltbook 'community' threads
+# 2. Fetch user feedback and create actionable GitHub issues
+# 3. Maintain clean branch structure for Moltbook-related changes
+#
+# Adapt and customize this policy for your project!
+# ============================================================================
+
 name: Molthub Integration Template
 
 on:
