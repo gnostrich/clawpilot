@@ -4,9 +4,17 @@ A GitHub Actions workflow template for integrating your repository with [Moltboo
 
 ## Repository Structure
 
-This repository contains **2 active workflow files**:
+This repository has a **simple, flat structure** with all files at the root level:
 
-### 1. **Template File** (`.github/workflows/molthub-template.yml`)
+```
+molthub-integration-template/
+├── molthub-template.yml    ← Template workflow file
+├── test-molthub.yml        ← Test workflow file
+├── README.md               ← This file
+└── LICENSE                 ← License file
+```
+
+### 1. **Template File** (`molthub-template.yml`)
 - **Purpose**: Reusable workflow template for Moltbook integration
 - **Type**: `workflow_call` (can be called by other workflows)
 - **What it does**:
@@ -15,7 +23,7 @@ This repository contains **2 active workflow files**:
   - Posts updates to Moltbook via API
 - **Includes**: Complete Moltbook Collaboration Policy as header comments
 
-### 2. **Test File** (`.github/workflows/test-molthub.yml`)
+### 2. **Test File** (`test-molthub.yml`)
 - **Purpose**: Test workflow to verify the integration works
 - **Type**: `workflow_dispatch` (manually triggered)
 - **What it does**:
@@ -44,9 +52,10 @@ Test workflow logs success
 
 ### For Template Users
 
-1. **Copy the template file** to your repository:
+1. **Copy the template file** to your repository's `.github/workflows/` directory:
    ```bash
-   # Copy .github/workflows/molthub-template.yml to your repo
+   # Download molthub-template.yml from this repository
+   # and place it in your-repo/.github/workflows/molthub-template.yml
    ```
 
 2. **Add your Moltbook API key** as a repository secret:
@@ -65,20 +74,17 @@ Test workflow logs success
 
 ### For Testing This Repository
 
-1. **Ensure you have the `MOLTHUB_API_KEY` secret** set in this repository
+1. **Note**: The workflow files are at the repository root for easy access and copying. To test them, you would need to place them in `.github/workflows/` directory.
 
-2. **Manually trigger the test workflow**:
-   - Go to Actions tab
-   - Select "Test Molthub Workflow"
-   - Click "Run workflow"
-   - Select the branch
-   - Click "Run workflow"
+2. **To use as templates**:
+   - Simply download `molthub-template.yml` and `test-molthub.yml`
+   - Place them in your repository's `.github/workflows/` directory
+   - Ensure you have the `MOLTHUB_API_KEY` secret configured
 
-3. **Verify the integration**:
-   - The test workflow will call the template
-   - The template will post a test message to Moltbook
-   - Check the workflow logs to see the API call
-   - Check your Moltbook community thread for the post
+3. **The test workflow** demonstrates:
+   - How to call the reusable template workflow
+   - How the template posts a test message to Moltbook
+   - Proper secret passing and workflow integration
 
 ## Configuration
 
@@ -92,10 +98,11 @@ All configuration is documented in the template file comments.
 
 ## Key Features
 
-✅ **Single-File Deployment**: Copy one file to integrate Moltbook  
+✅ **Simplified Structure**: All files at the root level for easy access  
+✅ **Single-File Template**: Copy one file to integrate Moltbook  
 ✅ **Reusable Workflow**: Use across multiple repositories  
 ✅ **Embedded Documentation**: Policy and guidelines in the template  
-✅ **Testable**: Includes test workflow to verify integration  
+✅ **Test Example**: Includes test workflow to demonstrate usage  
 ✅ **Secure**: Uses GitHub Secrets for API key management  
 
 ## Requirements
@@ -119,9 +126,9 @@ When the test workflow runs successfully, you'll see:
 ## Support
 
 For issues or questions:
-- Check the workflow logs in the Actions tab
-- Review the embedded policy in `molthub-template.yml`
-- Verify your `MOLTHUB_API_KEY` secret is set correctly
+- Review the embedded policy in `molthub-template.yml` (at repository root)
+- Check GitHub Actions documentation for workflow usage
+- Verify your `MOLTHUB_API_KEY` secret is set correctly when using the template
 
 ## License
 
