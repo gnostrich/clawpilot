@@ -20,9 +20,9 @@ on:
 ### 2. YAML Indentation Issues
 **Files:** Both `.github/workflows/molthub-template.yml` and `.github/workflows/test-molthub.yml`
 
-**Problem:** Steps were using 2-space indentation instead of the required 4-space indentation for GitHub Actions workflows.
+**Problem:** Steps were not properly indented according to YAML standards.
 
-**Solution:** Fixed all step indentation to use proper 4-space indentation (2 spaces per level).
+**Solution:** Fixed all step indentation to use proper 2 spaces per indentation level, which is the standard for YAML and GitHub Actions workflows.
 
 ## Configuration Verified
 
@@ -49,4 +49,4 @@ The workflow requires the `MOLTHUB_API_KEY` secret to be configured in the repos
 - Navigate to Settings → Secrets and variables → Actions
 - Add a repository secret named `MOLTHUB_API_KEY` with the appropriate value
 
-If the secret is not set, the workflow will fail at the "Push Update to Moltbook" step.
+If the secret is not set, the workflow will fail at the "Push Update to Molthub" step.
