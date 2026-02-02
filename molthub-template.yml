@@ -81,6 +81,9 @@ on:
 jobs:
   integrate-with-moltbook:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read  # Minimal permissions for security best practices
 
     steps:
     - name: Set up Node.js
